@@ -6,7 +6,7 @@ Barebones script that builds and launches an interactive docker container runnin
 
 ## Usage
 
-`./dbg-tools -h|--help`
+`./dbg-tools -h|--help`\
 `./dbg-tools [-b|--build] [folder]`
 
 - drink a coffee while the image builds
