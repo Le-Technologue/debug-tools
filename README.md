@@ -7,12 +7,10 @@ For your basic debugging needs when stranded on a linuxless machine !
 
 ## Usage
 
-By default, your home folder will be mounted into the container at /host_home, giving you access to the files on your host machine through the container.
+By default, your home folder will be mounted into the container at /host_home, giving you access to your host machine files through the container.
 
 If you wish to access your host machine otherwise, you'll have to edit the options of the "-v" flag of the docker run instruction.
 
 - bash ./run_dbg_tools.sh
 - drink a coffee while the image builds
 - enjoy your GNU enclave 	(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
-  
-
