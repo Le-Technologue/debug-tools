@@ -14,8 +14,29 @@
 
 set -e
 
+help=0
+build=0
 image_name="dbg_tools"
 container_name="dbg_tools"
+TEMP=`getopt -o hb --long build,help -n 'dbg-tools' -- "$@"`
+
+eval set -- "$TEMP"
+
+while true; do
+  case "$1" in
+    -h | --help ) help=1; shift ;;
+    -b | --build ) build=1; shift ;;
+    -- ) shift; break ;;
+    * ) break ;;
+  esac
+done
+
+if [[ $help -ne 0 ]]; then
+	echo "Usage:"
+	echo " ./dbg-tools -h|--help"
+	echo " ./dbg-tools [-b|--build] [folder]"
+	exit 0
+fi
 
 if [ -z $1 ]; then
 	volume=`pwd`
@@ -23,7 +44,7 @@ else
 	volume=`realpath $1`
 fi
 
-if [ "$(docker images -q $image_name 2> /dev/null)" == "" ]; then
+if [[ $build -ne 0 || "$(docker images -q $image_name 2> /dev/null)" == "" ]]; then
 	docker build -t $image_name .
 fi
 docker run -it --rm --security-opt=seccomp=unconfined --volume="$volume:/home" --name="$container_name" $image_name
