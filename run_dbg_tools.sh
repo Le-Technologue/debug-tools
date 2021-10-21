@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -10,5 +12,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-docker build -t dbg_tools .
-docker run -it -v ~:/host_home --security-opt seccomp=unconfined dbg_tools
+set -e
+
+image_name="dbg_tools"
+container_name="dbg_tools"
+
+if [ -z $1 ]; then
+	volume=`pwd`
+else
+	volume=`realpath $1`
+fi
+
+if [ "$(docker images -q $image_name 2> /dev/null)" == "" ]; then
+	docker build -t $image_name .
+fi
+docker run -it --rm --security-opt=seccomp=unconfined --volume="$volume:/home" --name="$container_name" $image_name
