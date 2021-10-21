@@ -1,2 +1,4 @@
 # debug-tools
-Barebones script that builds and launch an interactive docker container loaded with lldb and valgrind. For your basic debugging needs when stranded on a non linux machine.
+Barebones/lame script that builds and launches an interactive docker container running debian, lldb and valgrind.
+
+For your basic debugging needs when stranded on a linuxless machine.
