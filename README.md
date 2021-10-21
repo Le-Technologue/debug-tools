@@ -1,9 +1,9 @@
 # debug-tools
 Barebones script that builds and launches an interactive docker container running debian, lldb and valgrind, with the proper parameters to make those usable (seccomp=unconfined).
 
-For your basic debugging needs when stranded on a linuxless machine.
+For your basic debugging needs when stranded on a linuxless machine !
 
-Which makes it precious for the 42 School student I currently am.
+(Which makes it precious for the 42 School student I currently am).
 
 ## Usage
 
@@ -13,6 +13,6 @@ If you wish to access your host machine otherwise, you'll have to edit the optio
 
 - bash ./run_dbg_tools.sh
 - drink a coffee while the image builds
-- enjoy your GNU enclave
+- enjoy your GNU enclave 	(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
   
 
