@@ -6,11 +6,8 @@ Barebones script that builds and launches an interactive docker container runnin
 
 ## Usage
 
-By default, your home folder will be mounted into the container at /host_home, giving you access to your host machine files through the container.
+`./dbg-tools [folder]`
 
-If you wish to access your host machine otherwise, you'll have to edit the options of the "-v" flag of the docker run instruction in the script.
-
-- bash ./run_dbg_tools.sh
 - drink a coffee while the image builds
 - recompile your project for Linux through the container
 - enjoy debugging in your GNU enclave (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
