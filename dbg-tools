@@ -37,7 +37,7 @@ if [[ $help -ne 0 ]]; then
 fi
 
 if [ -z $1 ]; then
-	volume=`pwd`
+	volume=$HOME
 else
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		volume=`cd $1 && pwd`
