@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -e
+
+help=0
+build=0
+image_name="dbg_tools"
+container_name="dbg_tools"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	TEMP=`getopt hb $*`
+else
+	TEMP=`getopt -o hb -l build,help -n 'dbg-tools' -- "$@"`
+fi
+
+eval set -- "$TEMP"
+
+while true; do
+  case "$1" in
+    -h | --help ) help=1; shift ;;
+    -b | --build ) build=1; shift ;;
+    -- ) shift; break ;;
+    * ) break ;;
+  esac
+done
+
+if [[ $help -ne 0 ]]; then
+	echo "Usage:"
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		echo " ./dbg-tools -h"
+		echo " ./dbg-tools [-b] [folder]"
+	else
+		echo " ./dbg-tools -h|--help"
+		echo " ./dbg-tools [-b|--build] [folder]"
+	fi
+	exit 0
+fi
+
+if [ -z $1 ]; then
+	volume=$HOME
+else
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		volume=`cd $1 && pwd`
+	else
+		volume=`realpath $1`
+	fi
+fi
+
+if [[ $build -ne 0 || "$(docker images -q $image_name 2> /dev/null)" == "" ]]; then
+	docker build -t $image_name .
+fi
+docker run -it --rm --security-opt=seccomp=unconfined --volume="$volume:/home" --name="$container_name" $image_name
