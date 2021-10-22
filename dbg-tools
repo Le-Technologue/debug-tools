@@ -28,10 +28,10 @@ if [[ $help -ne 0 ]]; then
 	echo "Usage:"
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		echo " ./dbg-tools -h"
-		echo " ./dbg-tools [-b] [folder]"
+		echo " ./dbg-tools [-b] [work directory]"
 	else
 		echo " ./dbg-tools -h|--help"
-		echo " ./dbg-tools [-b|--build] [folder]"
+		echo " ./dbg-tools [-b|--build] [work directory]"
 	fi
 	exit 0
 fi
