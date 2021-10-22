@@ -8,15 +8,18 @@ Bash script that builds and launches an interactive docker container running deb
 
 macOS\
 `./dbg-tools -h`\
-`./dbg-tools [-b] [folder]`
+`./dbg-tools [-b] [work directory]`
 
 Linux\
 `./dbg-tools -h|--help`\
-`./dbg-tools [-b|--build] [folder]`
+`./dbg-tools [-b|--build] [work directory]`
 
 - drink a coffee while the image builds
 - recompile your project for Linux through the container
 - enjoy debugging in your GNU enclave (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+
+  - If you don't specify a work directory, your host machine $HOME folder will seamlessly mount to /home in your container.
+  - If your image is already built, building will be skipped. If you wish to rebuild your image, use the '-b' option.
 
 ## Interest
 
