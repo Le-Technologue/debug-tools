@@ -6,11 +6,11 @@ Barebones script that builds and launches an interactive docker container runnin
 
 ## Usage
 
-* macOS
+macOS\
 `./dbg-tools -h`\
 `./dbg-tools [-b] [folder]`
 
-* Linux
+Linux\
 `./dbg-tools -h|--help`\
 `./dbg-tools [-b|--build] [folder]`
 
