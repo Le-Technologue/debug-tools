@@ -1,24 +1,17 @@
 #!/bin/bash
 
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    run_dbg_tools.sh                                   :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: wetieven <wetieven@student.42lyon.fr>      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/21 15:11:03 by wetieven          #+#    #+#              #
-#    Updated: 2021/10/21 15:14:36 by wetieven         ###   ########lyon.fr    #
-#                                                                              #
-# **************************************************************************** #
-
 set -e
 
 help=0
 build=0
 image_name="dbg_tools"
 container_name="dbg_tools"
-TEMP=`getopt -o hb --long build,help -n 'dbg-tools' -- "$@"`
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	TEMP=`getopt hb $*`
+else
+	TEMP=`getopt -o hb -l build,help -n 'dbg-tools' -- "$@"`
+fi
 
 eval set -- "$TEMP"
 
@@ -41,7 +34,11 @@ fi
 if [ -z $1 ]; then
 	volume=`pwd`
 else
-	volume=`realpath $1`
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		volume=`cd $1 && pwd`
+	else
+		volume=`realpath $1`
+	fi
 fi
 
 if [[ $build -ne 0 || "$(docker images -q $image_name 2> /dev/null)" == "" ]]; then
