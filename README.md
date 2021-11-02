@@ -6,6 +6,12 @@ Bash script that builds and launches an interactive docker container running deb
 
 ## Usage
 
+- Launch Docker on your machine.
+- If you are at 42 School, you should set your Docker cache into your "goinfre" folder to prevent session overflows.
+   - (Settings > Resources > Disk Image Location in the Docker Desktop application)
+- Clone this repo wherever you like.
+- Use the script inside the repo like this :
+
 macOS\
 `./dbg-tools -h`\
 `./dbg-tools [-b] [work directory]`
@@ -14,8 +20,9 @@ Linux\
 `./dbg-tools -h|--help`\
 `./dbg-tools [-b|--build] [work directory]`
 
-- drink a coffee while the image builds
-- recompile your project for Linux through the container
+- Drink a coffee while the image builds.
+- When your container's prompt appears it is done !
+- Recompile your project for Linux through the container.
 - enjoy debugging in your GNU enclave (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 
   - If you don't specify a work directory, your host machine $HOME folder will seamlessly mount to /home in your container.
