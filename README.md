@@ -7,7 +7,7 @@ Bash script that builds and launches an interactive docker container running deb
 ## Usage
 
 - Launch Docker on your machine.
-- If you are at 42 School, you should set your Docker cache into your "goinfre" folder to prevent session overflows.
+- / ! \ If you are at 42 School, you should set your Docker cache into your "goinfre" folder to prevent session overflows. / ! \
    - (Settings > Resources > Disk Image Location in the Docker Desktop application)
 - Clone this repo wherever you like.
 - Use the script inside the repo like this :
