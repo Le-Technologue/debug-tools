@@ -5,6 +5,7 @@ RUN	apt-get update && apt-get upgrade -y && apt-get install -y \
 	gcc \
 	lldb \
 	make \
-	valgrind
+	valgrind \
+	gdb
 
 WORKDIR /home
