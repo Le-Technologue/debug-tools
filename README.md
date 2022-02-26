@@ -1,5 +1,5 @@
 # debug-tools
-Bash script that builds and launches an interactive docker container running debian, gdb, lldb and valgrind, with the proper parameters to make those usable (seccomp=unconfined).
+Bash script that builds and launches an interactive Debian Docker container running gdb, lldb and Valgrind, with the proper parameters to make those usable (seccomp=unconfined) and the convenient Fish shell.
 
 - For your basic debugging needs when stranded on a machine missing those tools.
 - Crucial to the 42 School student I currently am when using the school's Mac OS machines.
