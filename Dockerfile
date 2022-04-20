@@ -5,6 +5,7 @@ RUN	apt-get update && apt-get upgrade -y && apt-get install -y \
 	clang \
 	gcc \
 	g++ \
+	htop \
 	lldb \
 	make \
 	netcat \
