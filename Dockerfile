@@ -4,8 +4,10 @@ RUN	apt-get update && apt-get upgrade -y && apt-get install -y \
 	apt-utils \
 	clang \
 	gcc \
+	g++ \
 	lldb \
 	make \
+	netcat \
 	valgrind \
 	gdb \
 	git \
