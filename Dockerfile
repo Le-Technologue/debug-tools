@@ -11,12 +11,12 @@ RUN	apt-get update && apt-get upgrade -y && apt-get install -y \
 	htop \
 	lldb \
 	make \
-	valgrind \
+	valgrind
 
 # Readline library for 42 school's minishell project
 #
 RUN	apt-get install -y \
-	libreadline-dev \
+	libreadline-dev
 
 # Networking debug tools for 42 school's ft_irc project
 #
