@@ -15,8 +15,8 @@ RUN	apt-get update && apt-get upgrade -y && apt-get install -y \
 
 # Readline library for 42 school's minishell project
 #
-# RUN	apt-get install -y \
-# 	libreadline-dev \
+RUN	apt-get install -y \
+	libreadline-dev \
 
 # Networking debug tools for 42 school's ft_irc project
 #
