@@ -11,7 +11,7 @@ RUN	apt-get update && apt-get upgrade -y && apt-get install -y \
 	htop \
 	lldb \
 	make \
-	valgrind \
+	valgrind
 
 # Readline library for 42 school's minishell project
 #
