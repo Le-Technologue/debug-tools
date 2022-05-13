@@ -20,9 +20,9 @@ RUN	apt-get update && apt-get upgrade -y && apt-get install -y \
 
 # Networking debug tools for 42 school's ft_irc project
 #
-# RUN	apt-get install -y \
-# 	netcat \
-# 	weechat
+RUN	apt-get install -y \
+	netcat \
+	weechat
 
 RUN	which fish | xargs chsh -s
 
